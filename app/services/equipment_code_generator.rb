@@ -16,7 +16,7 @@ class EquipmentCodeGenerator
 
 
   def asset_code
-    @asset_type.split(",").map{ |each| each.strip[0] }.join.upcase
+    @asset_type.split(",").map { |each| each.strip[0] }.join.upcase
   end
 
   def config_code
@@ -24,5 +24,4 @@ class EquipmentCodeGenerator
     # EG. Day, Cav, Quad, Axel Dump => "DCQA"
     @configuration.split(",").map { |part| part.strip[0] }.join.upcase
   end
-
 end
