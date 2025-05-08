@@ -15,7 +15,7 @@ class EquipmentController < ApplicationController
       uid: result[:uid]
     )
 
-    render json: { cei: equipment.cei }, status: :created
+    render json: { cei: equipment.cei, buffered_usage: equipment.usage_buffered, original_usage: equipment.usage }, status: :created
   rescue => e
     render json: { error: e.message }, status: :unprocessable_entity
   end

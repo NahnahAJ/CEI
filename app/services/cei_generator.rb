@@ -35,9 +35,11 @@ class CeiGenerator
 
     # 6. Generate CEI
     cei = "#{equipment_category_code}-#{ymm_segment}-#{usage_segment}-#{julian}-#{uid}"
+
+    # Calculate the buffered usage
     buffered_usage = (@usage * 1.10).to_i
 
-    { cei:, uid:, buffered_usage:, julian: }
+    { cei:, buffered_usage:, original_usage: @usage }
   end
 
   private
